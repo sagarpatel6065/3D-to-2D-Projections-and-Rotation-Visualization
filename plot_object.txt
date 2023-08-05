@@ -1,0 +1,41 @@
+function plot_object(P,RP,CP)
+RR= RP;
+figure(2);
+subplot(4,3,[1 9])
+h = fill3(P(:,1),P(:,2),P(:,3),'-g*','MarkerSize',10,'LineWidth',2);
+hold on
+k = fill3(RR(:,1),RR(:,2),RR(:,3),'-ro','MarkerSize',10,'LineWidth',2);
+hold on
+hold on
+plot3(CP(1,1), CP(1,2),CP(1,3),'r*', 'MarkerSize',15,'LineWidth',5)
+legend('Image Plane','Rotated Image Plane','Camera','Location','northwest','FontSize',16 )
+xlabel('x')
+ylabel('y')
+zlabel('z')
+grid on
+axis([-2,2,-2,2,0,5])
+subplot(4,3,10)
+h = fill3(P(:,1),P(:,2),P(:,3),'-b*','MarkerSize',10,'LineWidth',2);
+hold on
+k = fill3(RR(:,1),RR(:,2),RR(:,3),'-ms','MarkerSize',10,'LineWidth',2);
+view(0,90)
+% xlabel('x')
+% ylabel('y')
+title('XY')
+subplot(4,3,11)
+h = fill3(P(:,1),P(:,2),P(:,3),'-b*','MarkerSize',10,'LineWidth',2);
+hold on
+k = fill3(RR(:,1),RR(:,2),RR(:,3),'-ms','MarkerSize',10,'LineWidth',2);
+view(0,0) % XZ
+% xlabel('x')
+% ylabel('z')
+title('XZ')
+subplot(4,3,12)
+h = fill3(P(:,1),P(:,2),P(:,3),'-b*','MarkerSize',10,'LineWidth',2);
+hold on
+k = fill3(RR(:,1),RR(:,2),RR(:,3),'-ms','MarkerSize',10,'LineWidth',2);
+view(90,0) % YZ
+% xlabel('y')
+% ylabel('z')
+title('YZ')
+end

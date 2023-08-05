@@ -1,0 +1,3 @@
+function D = ssd(PP, WPP)
+D = sum(sum(abs(PP - WPP).^2));
+end

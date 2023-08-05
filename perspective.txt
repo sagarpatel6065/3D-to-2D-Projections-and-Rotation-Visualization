@@ -1,0 +1,10 @@
+function PP = perspective(P, f)
+    % P is a matrix of 3D coordinates
+    % f is the focal length
+    
+    % Extract the z-coordinate of each point
+    Z = P(:, 3);
+    
+    % Compute the perspective projection for each point
+    PP = bsxfun(@times, P(:, 1:2), f ./ Z);
+end

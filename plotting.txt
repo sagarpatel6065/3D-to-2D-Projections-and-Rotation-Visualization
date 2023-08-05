@@ -1,0 +1,22 @@
+function plotting(P, PP, WPP)
+    figure; 
+    subplot(1,4,[1 3]);
+    fill3(P(:,1),P(:,2),P(:,3),'-r*', PP(:,1),PP(:,2),ones(size(PP,1),1),'-ys', ...
+    WPP(:,1),WPP(:,2),ones(size(WPP,1),1),'-bh','MarkerSize',10,'LineWidth',2);
+    hold on;
+    plot3(0,0,0, 'b*', 'MarkerSize',15,'LineWidth',3);
+    legend('Image Plane (Object)','Projection Plane','Weak Projection Plane','Camera',...
+           'FontSize',12,'Location','west' );
+    axis([-1,1,-1,1,0,5]);
+    xlabel('x'); ylabel('y'); zlabel('z');
+    grid on;
+    subplot(1,4,4);
+    fill(P(:,1),P(:,2),'-y*', PP(:,1),PP(:,2),'-ys', WPP(:,1),WPP(:,2),'-bh',...
+    'MarkerSize', 10,'LineWidth',2);
+    hold on;
+    plot(0,0,'m*', 'MarkerSize', 10,'LineWidth',2);
+    title('Transformed Points from 3D to 2D');
+    legend('Object','Perspective Projection','Weak Perspective Projection','Camera',...
+           'FontSize',10);
+    xlabel('x'); ylabel('y');
+end

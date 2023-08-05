@@ -1,0 +1,5 @@
+function RP = rotation(theta, P)
+% P is the coordinates and theta is the angle of rotation in degrees
+Rz = [cosd(theta) -sind(theta) 0; sind(theta) cosd(theta) 0; 0 0 1]; % rotation matrix about z-axis
+RP = (Rz * P')'; % apply rotation to points
+end
